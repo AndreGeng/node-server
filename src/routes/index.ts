@@ -6,6 +6,9 @@ import sessionRouter from "./session"
 import { HTTP_CODE } from "../common"
 
 const router = new Router()
+router.get("/", (ctx, next) => {
+  ctx.body = "Hello World!!"
+})
 
 const combinedRouter = combineRouters(router, sessionRouter)
 

@@ -18,6 +18,7 @@ app.use(bodyparser())
 // Routes
 app.use(router())
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log(`server started on http://localhost:${process.env.PORT}`)
+const port = process.env.PORT || 3000
+app.listen(port, () => {
+  console.log(`server started on http://localhost:${port}`)
 })
