@@ -1,12 +1,8 @@
 import Router from "koa-router"
-import { STATUS_CODE } from "../common"
+import { checkHealth } from "../controllers"
 
 const router = new Router({ prefix: "/health" })
 
-router.get("/", ctx => {
-  ctx.body = {
-    code: STATUS_CODE.SUCC,
-  }
-})
+router.get("/", checkHealth)
 
 export default router
