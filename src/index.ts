@@ -2,7 +2,7 @@ import Koa from "koa"
 import bodyparser from "koa-bodyparser"
 import logger from "koa-logger"
 import json from "koa-json"
-import * as dotenv from "dotenv"
+import dotenv from "dotenv"
 
 import router from "./routes"
 
