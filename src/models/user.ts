@@ -1,7 +1,10 @@
 /** node-server-eject mysql */
 import { STRING, ENUM, Model, Sequelize } from "sequelize"
 
-class User extends Model {}
+class User extends Model {
+  public name!: string
+  public gender!: string
+}
 
 export default (sequelize: Sequelize) => {
   User.init(

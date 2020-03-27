@@ -1,13 +1,16 @@
 /** node-server-eject mysql */
-import { Sequelize } from "sequelize"
+import { Sequelize, Model } from "sequelize"
 import { registerModelsHelper } from "common"
 
 interface DB {
   init(): Promise<void>
   sequelize?: Sequelize
 }
+interface SequelizeModel {
+  [key: string]: (new () => Model<object, object>) & typeof Model
+}
 
-const db = {} as DB
+const db = {} as DB & SequelizeModel
 
 db.init = () => {
   const { MYSQL_CONFIG } = process.env
