@@ -1,13 +1,10 @@
 import Router from "koa-router"
-import combineRouters from "koa-combine-routers"
-
-import healthRouter from "./health"
+import { registerCtrlsHelper } from "common"
 
 const router = new Router()
 router.get("/", ctx => {
   ctx.body = "Hello World!!"
 })
+registerCtrlsHelper(router)
 
-const combinedRouter = combineRouters(router, healthRouter)
-
-export default combinedRouter
+export default router
