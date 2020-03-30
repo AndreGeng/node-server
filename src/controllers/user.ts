@@ -1,7 +1,7 @@
 /** node-server-eject mysql */
 import Koa from "koa"
 import Router from "koa-router"
-import db from "models"
+import { db } from "common"
 
 import { STATUS_CODE, error } from "common"
 

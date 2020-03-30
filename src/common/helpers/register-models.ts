@@ -12,7 +12,6 @@ const registerModels = (sequelize: Sequelize) => {
   return glob
     .sync("**/*.ts", {
       cwd: modelsPath,
-      ignore: ["index.ts"],
     })
     .reduce(
       (acc, file) => {

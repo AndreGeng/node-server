@@ -4,12 +4,15 @@ import logger from "koa-logger"
 import json from "koa-json"
 import dotenv from "dotenv"
 import cors from "@koa/cors"
-import { succ, info } from "common"
+import {
+  succ,
+  info,
+  /** node-server-eject mysql -- start */
+  db,
+  /** node-server-eject mysql -- end */
+} from "common"
 
 import router from "./routes"
-/** node-server-eject mysql -- start */
-import models from "./models"
-/** node-server-eject mysql -- end */
 
 dotenv.config()
 
@@ -27,7 +30,7 @@ app.use(router.routes()).use(router.allowedMethods())
 const port = process.env.PORT || 3000
 /** node-server-eject mysql -- start */
 // 初始化myql存储
-models.init().then(() => {
+db.init().then(() => {
   info("mysql数据表初始化完成!")
   /** node-server-eject mysql -- end */
   app.listen(port, () => {

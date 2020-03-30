@@ -1,6 +1,6 @@
 /** node-server-eject mysql */
 import { Sequelize, Model } from "sequelize"
-import { registerModelsHelper } from "common"
+import registerModelsHelper from "./helpers/register-models"
 
 interface DB {
   init(): Promise<void>
