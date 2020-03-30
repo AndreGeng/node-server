@@ -14,5 +14,5 @@ export {
   /** node-server-eject mysql -- end */
   /** node-server-eject redis -- start */
   redis,
-  /** node-server-eject redis -- start */
+  /** node-server-eject redis -- end */
 }
