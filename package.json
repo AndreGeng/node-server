@@ -30,7 +30,9 @@
     "koa-router": "^7.4.0",
     "mysql2": "^2.1.0",
     "qs": "^6.7.0",
-    "sequelize": "^5.21.5"
+    "redis": "^3.0.2",
+    "sequelize": "^5.21.5",
+    "util-promisifyall": "^1.0.6"
   },
   "husky": {
     "hooks": {
@@ -49,6 +51,7 @@
     "@types/koa-router": "^7.0.42",
     "@types/koa__cors": "^3.0.1",
     "@types/qs": "^6.5.3",
+    "@types/redis": "^2.8.17",
     "commitlint": "^8.1.0",
     "cross-env": "^5.2.0",
     "husky": "^3.0.2",

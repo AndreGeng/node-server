@@ -10,6 +10,9 @@ import {
   /** node-server-eject mysql -- start */
   db,
   /** node-server-eject mysql -- end */
+  /** node-server-eject redis -- start */
+  redis,
+  /** node-server-eject redis -- end */
 } from "common"
 
 import router from "./routes"
@@ -28,6 +31,11 @@ app.use(bodyparser())
 app.use(router.routes()).use(router.allowedMethods())
 
 const port = process.env.PORT || 3000
+
+/** node-server-eject redis -- start */
+redis.init()
+/** node-server-eject redis -- end */
+
 /** node-server-eject mysql -- start */
 // 初始化myql存储
 db.init().then(() => {
