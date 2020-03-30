@@ -3,7 +3,7 @@ import { Sequelize, Model } from "sequelize"
 import registerModelsHelper from "./helpers/register-models"
 
 interface DB {
-  init(): Promise<void>
+  init(): Promise<Sequelize>
   sequelize?: Sequelize
 }
 interface SequelizeModel {
