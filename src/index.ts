@@ -13,12 +13,15 @@ import {
   redis,
   /** node-server-eject redis -- end */
 } from "common"
+import path from "path"
 import requestId from "koa-requestid"
 
 import router from "./routes"
 import { errorHandler, resHandler } from "./middlewares"
 
-dotenv.config()
+dotenv.config({
+  path: path.resolve(__dirname, `../.env.${process.env.NODE_ENV}`),
+})
 
 const app = new Koa()
 
