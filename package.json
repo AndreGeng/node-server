@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node -r tsconfig-paths/register ./src/index.ts",
-    "start:debug": "cross-env DEBUG='{{projectName}}:*' NODE_ENV='dev' node -r tsconfig-paths/register --inspect -r ts-node/register ./src/index.ts",
-    "watch": "nodemon --exec 'npm start'",
-    "watch:debug": "nodemon --exec 'npm run start:debug'",
+    "start": "nodemon --exec 'npm run serve'",
+    "start:debug": "nodemon --exec 'npm run serve:debug'",
+    "serve": "cross-env NODE_ENV='local' ts-node -r tsconfig-paths/register ./src/index.ts",
+    "serve:debug": "cross-env DEBUG='{{projectName}}:*' NODE_ENV='local' node -r tsconfig-paths/register --inspect -r ts-node/register ./src/index.ts",
     "build": "cross-env NODE_ENV='prod' tsc",
     "prepare": "npm run build"
   },
