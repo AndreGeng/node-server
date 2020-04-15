@@ -3,7 +3,7 @@ import Koa from "koa"
 import Router from "koa-router"
 import { redis } from "common"
 
-import { STATUS_CODE, error } from "common"
+import { STATUS_CODE, logger } from "common"
 
 const createPost = async (ctx: Koa.Context, next: Function) => {
   const reqBody = ctx.request.body
@@ -15,7 +15,7 @@ const createPost = async (ctx: Koa.Context, next: Function) => {
       }
       return
     } catch (err) {
-      error("createPost:", err)
+      logger.error("createPost:", err)
     }
   }
   ctx.body = {
@@ -38,7 +38,7 @@ const queryPost = async (ctx: Koa.Context, next: Function) => {
       return
     }
   } catch (e) {
-    error("queryPost:", e)
+    logger.error("queryPost:", e)
     ctx.body = {
       code: STATUS_CODE.FAIL,
     }

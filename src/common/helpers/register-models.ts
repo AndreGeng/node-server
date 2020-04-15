@@ -1,7 +1,7 @@
 /** node-server-eject mysql */
 import glob from "glob"
 import path from "path"
-import { Sequelize, Model } from "sequelize"
+import { Sequelize } from "sequelize"
 
 const modelsPath = path.resolve("./src/models")
 
@@ -9,19 +9,14 @@ const modelsPath = path.resolve("./src/models")
  * 加载models文件夹下除index.ts之外的其它model定义
  */
 const registerModels = (sequelize: Sequelize) => {
-  return glob
+  glob
     .sync("**/*.ts", {
       cwd: modelsPath,
     })
-    .reduce(
-      (acc, file) => {
-        const loadModel = require(path.resolve(modelsPath, file)).default
-        const model = loadModel(sequelize)
-        acc[model.name] = model
-        return acc
-      },
-      {} as { [key: string]: typeof Model }
-    )
+    .forEach(file => {
+      const loadModel = require(path.resolve(modelsPath, file)).default
+      loadModel(sequelize)
+    })
 }
 
 export default registerModels

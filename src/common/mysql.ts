@@ -24,8 +24,7 @@ db.init = () => {
     dialect: "mysql",
     timezone: "+08:00",
   })
-  const models = registerModelsHelper(db.sequelize)
-  Object.assign(db, models)
+  registerModelsHelper(db.sequelize)
   return db.sequelize.sync()
 }
 

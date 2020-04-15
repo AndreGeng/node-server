@@ -7,7 +7,7 @@ import redis from "./redis"
 
 export * from "./constant"
 export * from "./helpers"
-export * from "./logger"
+import * as logger from "./logger"
 export {
   /** node-server-eject mysql -- start */
   db,
@@ -15,4 +15,5 @@ export {
   /** node-server-eject redis -- start */
   redis,
   /** node-server-eject redis -- end */
+  logger,
 }

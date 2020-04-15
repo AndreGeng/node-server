@@ -1,7 +1,8 @@
 /** node-server-eject mysql */
 import { STRING, ENUM, Model, Sequelize } from "sequelize"
 
-class User extends Model {
+export class User extends Model {
+  public id!: number
   public name!: string
   public gender!: string
 }

@@ -27,6 +27,7 @@
     "koa-bodyparser": "^4.2.1",
     "koa-json": "^2.0.2",
     "koa-logger": "^3.2.1",
+    "koa-requestid": "^2.1.0",
     "koa-router": "^7.4.0",
     "mysql2": "^2.1.0",
     "qs": "^6.7.0",

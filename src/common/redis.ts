@@ -1,7 +1,7 @@
 /** node-server-eject redis */
 import redis from "redis"
 import promisifyAll from "util-promisifyall"
-import { error } from "./logger"
+import * as logger from "./logger"
 
 promisifyAll(redis.RedisClient.prototype)
 
@@ -41,7 +41,7 @@ const init = () => {
   )
   const client = redis.createClient(redisOption)
   client.on("error", err => {
-    error("redis.ts:", err)
+    logger.error("redis.ts:", err)
   })
   cache.client = client
 }
