@@ -1,3 +1,6 @@
+import path from "path"
+import initAlias from "module-alias"
+initAlias(path.resolve(__dirname, ".."))
 import Koa from "koa"
 import bodyparser from "koa-bodyparser"
 import koaLogger from "koa-logger"
@@ -13,7 +16,6 @@ import {
   redis,
   /** node-server-eject redis -- end */
 } from "common"
-import path from "path"
 import requestId from "koa-requestid"
 
 import router from "./routes"

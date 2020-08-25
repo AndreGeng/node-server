@@ -6,8 +6,9 @@ import { logger } from "common"
 const ctrlsPath = path.resolve("./src/controllers")
 const prefix = "/"
 const registerCtrlsHelper = (router: Router) => {
+  const ext = process.env.NODE_ENV === "local" ? ".ts" : ".js"
   glob
-    .sync("**/*.ts", {
+    .sync(`**/*${ext}`, {
       cwd: ctrlsPath,
     })
     .map((file: string) => {
