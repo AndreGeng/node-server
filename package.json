@@ -22,6 +22,7 @@
     "debug": "^4.1.1",
     "dotenv": "^8.0.0",
     "glob": "^7.1.6",
+    "http-graceful-shutdown": "^2.3.2",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-json": "^2.0.2",
